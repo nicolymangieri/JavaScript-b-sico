@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran SC</title>
+</head>
+<body>
+     <h1>Sistema de Multas</h1>
+     <h2>  <p> A velocidade máx dessa rua é: 60 Km/h</p></h2> 
+     velocidade do Carro:<input type="number" name="txtvel" id="velocidade"> Km/h
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="res"></div>
+    <style> 
+    body{
+        background-color: rgb(197, 52, 132);
+        color:rgb(0, 0, 0);
+        text-align: center;
+        
+    }
+    </style>
+
+
+
+    <script>        
+        function calcular() {
+            var txtv = window.document.getElementById('velocidade')
+            var res = window.document.getElementById('res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong>`
+            if (vel > 60) {
+                res.innerHTML += `<p>Você está <strong>MULTADO</strong> por excesso de velocidade`
+            }
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+
+    </script>
+</body>
+</html>
